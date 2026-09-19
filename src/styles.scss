@@ -1,1 +1,316 @@
-/* You can add global styles to this file, and also import other style files */
+ /* ==========================================================================
+           1. CSS VARIABLES & BASE STYLES
+           ========================================================================== */
+ :root {
+  //  --brand-green: #1b3b2b;
+   --brand-green: #162B1B;
+   /* Deep Emerald / Forest Green */
+   --brand-gold: #d4af37;
+   /* Metallic Gold */
+   --brand-gold-hover: #b89528;
+   /* Slightly darker gold for hover states */
+   --brand-creme: #fdfbf7;
+   /* Soft Cream Warm White */
+   --brand-creme-dark: #f4efe6;
+   /* Accent Creme Section Background */
+   --text-dark: #222222;
+   --text-muted: #666666;
+   --font-heading: 'Cormorant Garamond', serif;
+   --font-body: 'Montserrat', sans-serif;
+   --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ body {
+   font-family: var(--font-body);
+   background-color: var(--brand-creme);
+   color: var(--text-dark);
+   overflow-x: hidden;
+   font-weight: 300;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ .brand-font {
+   font-family: var(--font-heading);
+   color: var(--brand-green);
+ }
+
+ /* Accent Gold Line Helper */
+ .gold-divider {
+   width: 60px;
+   height: 2px;
+   background-color: var(--brand-gold);
+   margin: 1rem auto;
+ }
+
+ /* Buttons */
+ .btn-gold {
+   background-color: var(--brand-gold);
+   color: #ffffff;
+   border: 1px solid var(--brand-gold);
+   padding: 0.75rem 2rem;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 0.8rem;
+   font-weight: 500;
+   transition: var(--transition-smooth);
+   border-radius: 0;
+ }
+
+ .btn-gold:hover {
+   background-color: var(--brand-gold-hover);
+   border-color: var(--brand-gold-hover);
+   color: #ffffff;
+ }
+
+ .btn-outline-green {
+   border: 1px solid var(--brand-green);
+   color: var(--brand-green);
+   padding: 0.75rem 2rem;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+   font-size: 0.8rem;
+   font-weight: 500;
+   transition: var(--transition-smooth);
+   border-radius: 0;
+ }
+
+ .btn-outline-green:hover {
+   background-color: var(--brand-green);
+   color: var(--brand-creme);
+ }
+
+ /* ==========================================================================
+           2. NAVIGATION & HAMBURGER ANIMATION
+           ========================================================================== */
+ .navbar {
+   background-color: var(--brand-green);
+   padding: 1.5rem 0;
+   transition: var(--transition-smooth);
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+ }
+
+ /* Dynamic height reduction on scroll */
+ .navbar.navbar-shrink {
+   padding: 0.6rem 0;
+ }
+
+ .navbar-brand {
+   font-family: var(--font-heading);
+   font-size: 2rem;
+   color: var(--brand-gold) !important;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   font-weight: 600;
+ }
+
+ .nav-link {
+   color: var(--brand-creme) !important;
+   font-size: 0.9rem;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+   margin: 0 0.8rem;
+   position: relative;
+   transition: var(--transition-smooth);
+ }
+
+ .nav-link:hover,
+ .nav-link.active {
+   color: var(--brand-gold) !important;
+ }
+
+ /* Custom Hamburger Toggler */
+ .navbar-toggler {
+   border: none;
+   padding: 0;
+   width: 30px;
+   height: 24px;
+   position: relative;
+   background: transparent !important;
+   box-shadow: none !important;
+ }
+
+ .hamburger-line {
+   display: block;
+   width: 100%;
+   height: 2px;
+   background-color: var(--brand-gold);
+   position: absolute;
+   left: 0;
+   transition: var(--transition-smooth);
+ }
+
+ /* Default horizontal lines position */
+ .hamburger-line:nth-child(1) {
+   top: 0;
+ }
+
+ .hamburger-line:nth-child(2) {
+   top: 11px;
+ }
+
+ .hamburger-line:nth-child(3) {
+   top: 22px;
+ }
+
+ /* Animation when expanded: converts to 3 vertical parallel lines */
+ .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(1) {
+   top: 11px;
+   left: -8px;
+   transform: rotate(90deg);
+ }
+
+ .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(2) {
+   top: 11px;
+   left: 0;
+   transform: rotate(90deg);
+ }
+
+ .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(3) {
+   top: 11px;
+   left: 8px;
+   transform: rotate(90deg);
+ }
+
+ /* ==========================================================================
+           3. HERO SECTION
+           ========================================================================== */
+ .hero-section {
+   background: linear-gradient(rgba(27, 59, 43, 0.65), rgba(27, 59, 43, 0.65)),
+     url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+   min-height: 90vh;
+   display: flex;
+   align-items: center;
+   color: var(--brand-creme);
+   text-align: center;
+   padding-top: 80px;
+ }
+
+ .hero-title {
+   font-size: 4rem;
+   color: var(--brand-creme);
+   font-weight: 400;
+   letter-spacing: 1px;
+ }
+
+ .hero-subtitle {
+   font-size: 1.1rem;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   color: var(--brand-gold);
+   margin-bottom: 1.5rem;
+ }
+
+ /* ==========================================================================
+           4. CONTENT SECTIONS & CARDS
+           ========================================================================== */
+ .section-padding {
+   padding: 6rem 0;
+ }
+
+ .bg-creme-dark {
+   background-color: var(--brand-creme-dark);
+ }
+
+ .section-title {
+   font-size: 2.8rem;
+   margin-bottom: 0.5rem;
+ }
+
+ .package-card {
+   background: #ffffff;
+   border: 1px solid rgba(212, 175, 55, 0.2);
+   padding: 3rem 2rem;
+   transition: var(--transition-smooth);
+   height: 100%;
+ }
+
+ .package-card:hover {
+   transform: translateY(-8px);
+   box-shadow: 0 15px 30px rgba(27, 59, 43, 0.08);
+   border-color: var(--brand-gold);
+ }
+
+ .package-icon {
+   font-size: 2rem;
+   color: var(--brand-gold);
+   margin-bottom: 1.5rem;
+ }
+
+ /* Form Controls */
+ .form-control,
+ .form-select {
+   background-color: transparent;
+   border: none;
+   border-bottom: 1px solid var(--brand-green);
+   border-radius: 0;
+   padding: 0.75rem 0;
+   color: var(--text-dark);
+ }
+
+ .form-control:focus,
+ .form-select:focus {
+   background-color: transparent;
+   box-shadow: none;
+   border-color: var(--brand-gold);
+ }
+
+ /* Footer */
+ footer {
+   background-color: var(--brand-green);
+   color: var(--brand-creme);
+   padding: 3rem 0 1.5rem 0;
+   border-top: 1px solid rgba(212, 175, 55, 0.3);
+ }
+
+ .social-icons a {
+   color: var(--brand-creme);
+   font-size: 1.2rem;
+   margin: 0 10px;
+   transition: var(--transition-smooth);
+ }
+
+ .social-icons a:hover {
+   color: var(--brand-gold);
+ }
+
+ /* ==========================================================================
+           5. MODALS
+           ========================================================================== */
+ /* modal.component.css */
+ dialog {
+   border: none;
+   border-radius: 8px;
+   padding: 20px;
+   width: 800px;
+   max-width: 90vw;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ }
+
+ /* Styles the native backdrop backdrop behind the modal */
+ dialog::backdrop {
+   background-color: rgba(0, 0, 0, 0.5);
+   -webkit-backdrop-filter: blur(3px);
+   backdrop-filter: blur(3px);
+   /* Optional: Blurs background app content */
+ }
+
+ .modal-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid #eee;
+   padding-bottom: 10px;
+   margin-bottom: 15px;
+ }
+
+ .close-btn {
+   background: none;
+   border: none;
+   font-size: 1.2rem;
+   cursor: pointer;
+ }
