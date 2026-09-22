@@ -22,6 +22,7 @@ export class App implements OnInit {
   isMenuCollapsed: boolean = true;
 
   selectedPackage: string = '';
+  isFocused: boolean = false;
 
   packageDetails = [
     {
