@@ -165,7 +165,60 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <form>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <!-- Hidden input required for Netlify bot spam protection -->
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="d-none">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <!-- IMPORTANT: All inputs must have a 'name' attribute -->
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-6 mb-3 mb-md-0">
+              <input type="date" name="event-date" class="form-control" placeholder="Event Date" />
+            </div>
+            <div class="col-md-6">
+              <select name="event-type" class="form-select" title="eventType">
+                <option selected disabled>Event Type</option>
+                <option>Wedding Celebration</option>
+                <option>Private Gala / Party</option>
+                <option>Corporate Event</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-5">
+            <textarea
+              name="message"
+              class="form-control"
+              rows="4"
+              placeholder="Tell us about your event vision..."
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-gold">Send Inquiry</button>
+          </div>
+        </form>
+        <!-- <form>
           <div class="row mb-4">
             <div class="col-md-6 mb-3 mb-md-0">
               <input type="text" class="form-control" placeholder="Your Name" required />
@@ -197,7 +250,7 @@
           <div class="text-center">
             <button type="submit" class="btn btn-gold">Send Inquiry</button>
           </div>
-        </form>
+        </form> -->
       </div>
     </div>
   </div>
